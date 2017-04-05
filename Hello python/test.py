@@ -1,0 +1,5 @@
+x="Hello";
+
+
+
+print(x)

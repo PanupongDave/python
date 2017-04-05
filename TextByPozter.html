@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html>
+<!-- Credit By Pozter -->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Happy V Day :3</title>
+	<link href="https://fonts.googleapis.com/css?family=Prompt:300" rel="stylesheet">
+	<style type="text/css" media="screen">
+		body {
+		  background: #fff;
+		  height: 100%;
+		  width: 100%;
+		  margin: 0;
+		  padding: 0;
+		  font-family: 'Prompt', sans-serif !important;
+		}
+		canvas{
+		  position:absolute;
+		}
+		.main{
+			margin: 0 auto;
+			width: 80%;
+			font-size: 26px;
+		}
+		.typed-cursor{
+	    opacity: 1;
+	    -webkit-animation: blink 0.7s infinite;
+	    -moz-animation: blink 0.7s infinite;
+	    animation: blink 0.7s infinite;
+			}
+			@keyframes blink{
+			    0% { opacity:1; }
+			    50% { opacity:0; }
+			    100% { opacity:1; }
+			}
+			@-webkit-keyframes blink{
+			    0% { opacity:1; }
+			    50% { opacity:0; }
+			    100% { opacity:1; }
+			}
+			@-moz-keyframes blink{
+			    0% { opacity:1; }
+			    50% { opacity:0; }
+			    100% { opacity:1; }
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas"></canvas>
+	<div class="main">
+	</div>
+	<iframe width="0" height="0" src="https://www.youtube.com/embed/2FJL-E3SKOU?autoplay=1"></iframe>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript" src="js/typed.js"></script>
+	<script>
+	var text = [
+		'Happy Valentine\'s Dayyyyyyyyyyyyyy xD  ',
+		'ซื้อของขวัญให้แล้วเน้าะ มาสคาร่าไงจะอะไรล่าาาาา  ',
+		'มีความสุขมากๆนะ   ',
+		'ไม่ได้อยู่ด้วยกันอีกแล้วววววววววว แต่พาไปเที่ยวมาแล้วนะเอ้อ  ',
+		'เที่ยวสนุกป๊ะะะะะะ วันหลังเธอต้องพาเราเที่ยวมั่งนะ 5555 ',
+		'เอ้าาาาาาาาาา เพลงมา https://www.youtube.com/watch?v=2FJL-E3SKOU   ',
+		'ต่อจากนี้ไปโลกทั้งใบจะมีแต่ราววววววววววว (ร้องเพลง)   ',
+		'ไม่สบายอยู่ใช่มั้ย หายไวๆนะเธออออออออ ดูแลตัวเองด้วย เลาเป็นห่วงง :3   ',
+		'หยุดหงุดหงิดใส่เราบ้างก้ด้ายยยยยยยย ',
+		'อาจไม่ค่อยซึ้ง ไม่ค่อยหวานแบบคนอื่นเค้านะ 5555 แต่เราไม่รู้จะมุ้งมิ้งวิธีไหน  ',
+		'อยู่ๆก็ ปิ๊ง !! ไอเดียนี้ขึ้นมาพอดี เลยกะจะทำให้เธอนะ  :D ',
+		'มันอาจไม่สวยมากเท่าไหร่ 5555 ก้ทำได้สุดฝีมือแค่นี้นี่หว่า T_T แต่คิดว่าเธอคงชอบมันเน้าะ  ',
+		'อยากไปเที่ยวกับเธออีกจางงงงงงงงงง  มีความสุขทุกที่ ที่มีเธอเบย อิอิ   ',
+		'ขอโทษนะ ที่หลายครั้งเราทำให้เธอต้องปวดหัว 555 อย่าเครียดมากดิ เราไม่ได้แรดขนาดนั้นซะหน่อยโถ่  ',
+		'เธอมากกว่า อยู่นั้นหนุ่มๆ หล่อๆ เยอะชิบหาย ยังมีหน้ามาบอกว่าสวยไปวันๆ อีก ถ้ามีคนมาจีบจะทำไงฟร้ะ  ',
+		'หวงนะรู้มั้ยเนี่ย ห๊ะ ๆ เดะ เหอะ ๆ แอดเข้าไปคนหล่อๆเนี่ย ติดตามให้เยอะๆ เดะโดนตบฟว่ำแน่ หึหึ  ',
+		'ใกล้จะวันครบรอบ 3 ปี แล้ววู้วววววววววววววววว     ',
+		'เธอใกล้จะไปฝึกงานแล้ววววววว  ดูแลตัวเองดีๆนะ อย่าไปอ่อยให้มากนัก อย่าไปทำน่ารักใส่ใคร เดี๋ยวเป็นเรื่อง   ',
+		'ขอบคุณสำหรับช็อคโกแลต แพงชิบห๊ายยยยยยยยย แต่เราชอบกินช็อคโกแลตอยู่แล้วไง 555 ถือว่าดี   ',
+		'ขอบคุณสำหรับหลายๆอย่างที่ทำให้นะ ขอบคุณจริงๆ   ',
+		'ขอบคุณที่เข้าใจเรา ยอมทำตามที่เราสั่งหลายๆอย่าง แต่บางอย่างเธอก็ดื้อไปนะ ที่สั่งไปเพราะห่วง และเป็นห่วงนะจ้ะ อิหมู   ',
+		'ขอบคุณนะที่เข้ามาในชีวิตเรา  ',
+		'ขอโทษนะที่เคยทำให้ร้องไห้และเสียใจอยู่บ่อย T_T     ',
+		'ขอโทษนะที่ทำให้เธอเเหนื่อยใจหลายๆครั้งแต่เธอก้พยายามคุยให้เราเข้าใจกันทุกครั้ง       ',
+		'ขอโทษนะที่เราไปไหนแล้วลืมบอก 5555 แต่ทุกวันนี้เพื่อนเราก้เตือนอยู่บ่อยๆนะ ว่าต้องบอกเธอก่อน :D',
+		'ขอโทษนะที่ดื้อบ้างงงงงงงงง เวลาที่ไม่ทำตามที่เธอสั่ง ก้มันลืมนี่นาาาาาา ไม่โกรธกันเน้าะะะ  ',
+		'ขอบคุณที่อ่านมันจนจบนะบี้ ~~~~~~~~~~~~~~~~~~~~~',
+		'รักบี้นะ จุ๊บบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบบ  ♥',
+	]
+	for(var i = 0; i < text.length; i++){
+		$('.main').append('<span id="say'+i+'"></span>')
+		$("#say"+i).typed({
+        strings: [text[i]],
+        startDelay: 1000,
+        typeSpeed: text[i].length/2,
+    });
+	}
+
+
+		var HeartsBackground = {
+		  heartHeight: 60,
+		  heartWidth: 64,
+		  hearts: [],
+		  heartImage: 'love.png',
+		  maxHearts: 8,
+		  minScale: 0.4,
+		  draw: function() {
+		    this.setCanvasSize();
+		    this.ctx.clearRect(0, 0, this.w, this.h);
+		    for (var i = 0; i < this.hearts.length; i++) {
+		      var heart = this.hearts[i];
+		      heart.image = new Image();
+		      heart.image.style.height = heart.height;
+		      heart.image.src = this.heartImage;
+		      this.ctx.globalAlpha = heart.opacity;
+		      this.ctx.drawImage (heart.image, heart.x, heart.y, heart.width, heart.height);
+		    }
+		    this.move();
+		  },
+		  move: function() {
+		    for(var b = 0; b < this.hearts.length; b++) {
+		      var heart = this.hearts[b];
+		      heart.y += heart.ys;
+		      if(heart.y > this.h) {
+		        heart.x = Math.random() * this.w;
+		        heart.y = -1 * this.heartHeight;
+		      }
+		    }
+		  },
+		  setCanvasSize: function() {
+		    this.canvas.width = window.innerWidth;
+		    this.canvas.height = window.innerHeight;
+		    this.w = this.canvas.width;
+		    this.h = this.canvas.height;
+		  },
+		  initialize: function() {
+		    this.canvas = $('#canvas')[0];
+
+		    if(!this.canvas.getContext)
+		      return;
+
+		    this.setCanvasSize();
+		    this.ctx = this.canvas.getContext('2d');
+
+		    for(var a = 0; a < this.maxHearts; a++) {
+		      var scale = (Math.random() * (1 - this.minScale)) + this.minScale;
+		      this.hearts.push({
+		        x: Math.random() * this.w,
+		        y: Math.random() * this.h,
+		        ys: Math.random() + 1,
+		        height: scale * this.heartHeight,
+		        width: scale * this.heartWidth,
+		        opacity: scale
+		      });
+		    }
+
+		    setInterval($.proxy(this.draw, this), 30);
+		  }
+		};
+
+		$(document).ready(function(){
+		  HeartsBackground.initialize();
+		  SmilBackground.initialize();
+		});
+	</script>
+</body>
+</html>
